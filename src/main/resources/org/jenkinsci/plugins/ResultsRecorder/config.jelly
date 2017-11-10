@@ -20,10 +20,10 @@
         <f:block>
             <table width="100%">
                 <f:optionalBlock title="Add labels" field="addLabel" checked="${instance.isAddLabel()}"
-                                 inline="true">
+                                 inline="true" help="/plugin/test-management/help-labels.html">
                 </f:optionalBlock>
                 <f:optionalBlock title="Delete old reports" field="toDelete" checked="${instance.isToDelete()}"
-                                 inline="true">
+                                 inline="true" help="/plugin/test-management/help-delete-reports.html">
                     <f:entry title="Older than" field="deleteCriteria">
                         <f:textbox default="3"/>
                     </f:entry>
