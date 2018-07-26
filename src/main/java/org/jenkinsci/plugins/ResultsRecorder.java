@@ -17,9 +17,7 @@ import org.jenkinsci.plugins.util.Label;
 import org.jenkinsci.plugins.util.LabelOption;
 import org.kohsuke.stapler.DataBoundConstructor;
 import org.kohsuke.stapler.QueryParameter;
-
 import java.io.File;
-import java.io.IOException;
 import java.io.PrintStream;
 import java.util.Calendar;
 
@@ -70,11 +68,25 @@ public class ResultsRecorder extends Recorder {
     }
 
     @Override
-    public boolean perform(AbstractBuild<?, ?> build, Launcher launcher, BuildListener listener) throws IOException {
+    public boolean perform(AbstractBuild<?, ?> build, Launcher launcher, BuildListener listener) {
         PrintStream logger = listener.getLogger();
-        String workspace = build.getProject().getSomeWorkspace().getRemote();
+        String workspace = null;
+        File xml = null;
+        try {
+            workspace = build.getProject().getSomeWorkspace().getRemote();
+            File[] rootDir = new File(workspace).listFiles();
+            for (File file : rootDir) {
+                if (file.isDirectory() && !file.isHidden()) {
+                    xml = new File(file.getAbsolutePath() + "/target/tm-testng.xml");
+                    if (xml.exists()) {
+                        break;
+                    }
+                }
+            }
+        } catch (NullPointerException e) {
+            logger.append(e.toString());
+        }
         int buildNumber = build.number;
-        File xml = new File(workspace + "/target/tm-testng.xml");
         String formattedLabel = null;
         String deleteCriteria = null;
         String dateCriteria = null;

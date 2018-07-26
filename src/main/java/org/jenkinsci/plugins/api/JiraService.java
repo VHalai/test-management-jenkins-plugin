@@ -25,10 +25,12 @@ import org.jenkinsci.plugins.entity.Test;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.nio.charset.Charset;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 
 
 /**
@@ -43,7 +45,7 @@ import java.util.Map;
 class JiraService {
     private final static String JIRA_API_RELATIVE_PATH = "rest/api/2";
     private final static String TEST_MANAGEMENT_RELATIVE_PATH = "rest/tm/1.0";
-    private final int HTTP_CLIENT_TIMEOUT_SECONDS = 15;
+    private final static int HTTP_CLIENT_TIMEOUT_SECONDS = 15;
 
     private final String username;
     private final String password;
@@ -77,7 +79,7 @@ class JiraService {
     }
 
     private static String getAuthorization(String username, String password) {
-        return "Basic ".concat(Base64.encode(username.concat(":").concat(password).getBytes()));
+        return "Basic ".concat(Base64.encode(username.concat(":").concat(password).getBytes(Charset.defaultCharset())));
     }
 
     private String getAuthorization() {

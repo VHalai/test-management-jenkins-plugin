@@ -3,9 +3,9 @@ package org.jenkinsci.plugins.api;
 import org.jenkinsci.plugins.entity.Comment;
 import org.jenkinsci.plugins.entity.Issue;
 import org.jenkinsci.plugins.util.JiraFormatter;
-
 import java.io.IOException;
 import java.io.PrintStream;
+import java.io.UnsupportedEncodingException;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -33,8 +33,8 @@ public class TestManagementService {
         this.logger = logger;
     }
 
-    public TestManagementService(String jiraUrl, String username, String password) {
-        this.logger = new PrintStream(System.out);
+    public TestManagementService(String jiraUrl, String username, String password) throws UnsupportedEncodingException {
+        this.logger = new PrintStream(System.out, true, "UTF8");
         this.jira = new JiraService(jiraUrl, username, password, System.getProperty("user.dir"), logger);
         this.buildNumber = 1;
     }
@@ -75,8 +75,9 @@ public class TestManagementService {
             if (comment.getBody().contains(JiraFormatter.getTitle()) && comment.getCreated().before(expirationDate)) {
                 //Remove all attachments
                 Matcher attachmentsMatcher = attachmentIdPattern.matcher(comment.getBody());
+
                 while (attachmentsMatcher.find()) {
-                    int attachmentId = Integer.valueOf(attachmentsMatcher.group());
+                    int attachmentId = Integer.parseInt(attachmentsMatcher.group());
                     if (jira.removeAttachment(attachmentId)) attachmentCounter++;
                 }
 
