@@ -1,0 +1,5 @@
+<?jelly escape-by-default='true'?>
+<div>
+    This plugin updates Jira issues with basic build information and useful artifacts
+    (titled values, user defined files, screens, stack traces).
+</div>
