@@ -1,0 +1,4 @@
+org.jenkinsci.plugins
+org.jenkinsci.plugins.api
+org.jenkinsci.plugins.entity
+org.jenkinsci.plugins.util

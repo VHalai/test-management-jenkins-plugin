@@ -1,0 +1,64 @@
+Running tests for org.jenkins-ci.plugins:test-management:1.1
+Jul 25, 2018 5:15:45 PM org.eclipse.jetty.util.log.Log initialized
+INFO: Logging initialized @742ms
+Picking up existing exploded jenkins.war at D:\halai\test-management-jenkins-plugin-master\test-management-jenkins-plugin-master\target\jenkins-for-test
+Jul 25, 2018 5:15:46 PM org.eclipse.jetty.server.handler.ContextHandler setContextPath
+WARNING: Empty contextPath
+Jul 25, 2018 5:15:46 PM org.eclipse.jetty.server.Server doStart
+INFO: jetty-9.2.15.v20160210
+Jul 25, 2018 5:15:46 PM org.eclipse.jetty.webapp.StandardDescriptorProcessor visitServlet
+INFO: NO JSP Support for /, did not find org.eclipse.jetty.jsp.JettyJspServlet
+Jul 25, 2018 5:15:46 PM org.eclipse.jetty.server.handler.ContextHandler doStart
+INFO: Started o.e.j.w.WebAppContext@6c4980d3{/,file:/D:/halai/test-management-jenkins-plugin-master/test-management-jenkins-plugin-master/target/jenkins-for-test/,AVAILABLE}{D:\halai\test-management-jenkins-plugin-master\test-management-jenkins-plugin-master\target\jenkins-for-test}
+Jul 25, 2018 5:15:47 PM org.eclipse.jetty.server.AbstractConnector doStart
+INFO: Started ServerConnector@6ce86ce1{HTTP/1.1}{localhost:50286}
+Jul 25, 2018 5:15:47 PM org.eclipse.jetty.server.Server doStart
+INFO: Started @2014ms
+Jul 25, 2018 5:15:47 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Started initialization
+Jul 25, 2018 5:15:52 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Listed all plugins
+Jul 25, 2018 5:15:53 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Prepared all plugins
+Jul 25, 2018 5:15:53 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Started all plugins
+Jul 25, 2018 5:15:53 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Augmented all extensions
+Jul 25, 2018 5:15:54 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Loaded all jobs
+Jul 25, 2018 5:15:55 PM org.jenkinsci.main.modules.sshd.SSHD start
+INFO: Started SSHD at port 50304
+Jul 25, 2018 5:15:55 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Completed initialization
+Jul 25, 2018 5:15:55 PM org.eclipse.jetty.server.Server doStart
+INFO: jetty-9.2.15.v20160210
+Jul 25, 2018 5:15:55 PM org.eclipse.jetty.server.handler.ContextHandler doStart
+INFO: Started o.e.j.s.ServletContextHandler@75d0911a{/,null,AVAILABLE}
+Jul 25, 2018 5:15:55 PM org.eclipse.jetty.server.AbstractConnector doStart
+INFO: Started ServerConnector@22b53226{HTTP/1.1}{0.0.0.0:50306}
+Jul 25, 2018 5:15:55 PM org.eclipse.jetty.server.Server doStart
+INFO: Started @10113ms
+Jul 25, 2018 5:15:57 PM org.eclipse.jetty.server.AbstractConnector doStop
+INFO: Stopped ServerConnector@6ce86ce1{HTTP/1.1}{localhost:0}
+Jul 25, 2018 5:15:57 PM org.eclipse.jetty.server.handler.ContextHandler doStop
+INFO: Stopped o.e.j.w.WebAppContext@6c4980d3{/,file:/D:/halai/test-management-jenkins-plugin-master/test-management-jenkins-plugin-master/target/jenkins-for-test/,UNAVAILABLE}{D:\halai\test-management-jenkins-plugin-master\test-management-jenkins-plugin-master\target\jenkins-for-test}
+Jul 25, 2018 5:15:57 PM jenkins.model.Jenkins cleanUp
+INFO: Stopping Jenkins
+Jul 25, 2018 5:15:57 PM jenkins.model.Jenkins$21 onAttained
+INFO: Started termination
+Jul 25, 2018 5:15:57 PM jenkins.model.Jenkins$21 onAttained
+INFO: Completed termination
+Jul 25, 2018 5:15:57 PM jenkins.model.Jenkins _cleanUpDisconnectComputers
+INFO: Starting node disconnection
+Jul 25, 2018 5:15:57 PM hudson.TcpSlaveAgentListener$ConnectionHandler run
+INFO: Accepted connection #1 from /10.6.103.69:50314
+Jul 25, 2018 5:15:57 PM jenkins.model.Jenkins _cleanUpShutdownPluginManager
+INFO: Stopping plugin manager
+Jul 25, 2018 5:15:57 PM jenkins.model.Jenkins _cleanUpPersistQueue
+INFO: Persisting build queue
+Jul 25, 2018 5:15:57 PM jenkins.model.Jenkins _cleanUpAwaitDisconnects
+INFO: Waiting for node disconnection completion
+WARN: The method class org.apache.commons.logging.impl.SLF4JLogFactory#release() was invoked.
+WARN: Please see http://www.slf4j.org/codes.html#release for an explanation.
+Jul 25, 2018 5:15:57 PM jenkins.model.Jenkins cleanUp
+INFO: Jenkins stopped

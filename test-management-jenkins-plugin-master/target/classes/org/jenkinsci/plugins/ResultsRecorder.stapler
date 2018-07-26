@@ -1,0 +1,2 @@
+#Wed Jul 25 17:17:08 MSK 2018
+constructor=jiraUrl,username,password,dateCriteria,deleteCriteria,toDelete,addLabel,prefix,addInfo
